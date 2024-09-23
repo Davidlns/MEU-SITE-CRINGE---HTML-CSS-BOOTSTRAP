@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Culinária</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <!--=============================================Links CSS Formulários==================================================-->  
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->  
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--===============================================================================================-->
+
+        <style>
+
+            @font-face 
+            {
+                font-family: Cursefont;
+                src: url(Fonts/DancingScript-VariableFont_wght.ttf);
+            }
+
+            body
+            {
+                background-image:url("Imagens/fundoimagem.jpg");
+                font-family:Cursefont;
+                background-color: rgba(26, 26, 26, 0.389);
+                background-blend-mode: overlay;
+                background-repeat: no-repeat;
+                justify-content: center;
+            }
+
+            nav
+            {
+                background-color: rgb(255, 235, 226);
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                
+            }
+
+            #formulario
+			{
+
+                background-color:  rgb(61, 61, 61);
+                padding: 100px;
+                margin-left: 50px;
+
+			}
+
+			#titulolog
+			{
+				color: white;
+                background-color:  rgb(90, 26, 0);
+                background-size: 447px;
+                text-align: center;
+                width: 450px;
+               
+			}
+
+            #formcad
+            {
+                width:600px;
+                height: 450px;
+                background-color:  rgb(61, 61, 61);
+                align-items: center;
+            }
+
+            .btn
+            {
+                background-color:rgb(90, 26, 0);
+            }
+
+            .titulos
+            {
+                color:aliceblue;
+                font-weight: bold;
+                /* background-color:rgb(255, 235, 226); */
+                /*border: 3px solid rgb(90, 26, 0);*/
+                
+            }
+            #titcad
+            {
+                color: white;
+                font-weight: bold;
+                background-color:rgb(90, 26, 0);
+                width: 600px;
+                text-align: center;
+                align-items: center;
+            }
+            
+            footer 
+            {
+                background-color: #222; 
+                color: white;
+                text-align: center;
+                padding: 50px;
+            }
+
+
+            .container 
+            {
+                padding: 65px;
+                text-align: center; /* Centraliza o texto */
+                align-content: center;
+            }
+
+            .section 
+            {
+                display: none; /* Esconde todas as seções inicialmente */
+            }
+
+            .section.active 
+            {
+                display: block; /* Mostra a seção ativa */
+            }
+
+            label
+            {
+                font-size: 20px;
+            }
+
+            h5
+            {
+                margin-bottom: 20px;
+            }
+
+            .card
+            {
+                margin-right:10px;
+                margin-bottom: 10px; 
+            }
+
+        </style>
+        
+    </head>
+    <body>
+
+        <nav class="nav nav-tabs" class="navbar bg-dark border-bottom border-body">
+
+            <img src="Imagens/LOGO.png" alt="Logo" width="150" height="100" class="d-inline-block align-text-top">
+            <a class="nav-item nav-link active" data-toggle="tab" href="#home" style="color:rgb(90, 26, 0); font-size: 17px;">Home</a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#receitas" style="color:rgb(90, 26, 0); font-size: 17px;">Receitas</a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#comunidade" style="color:rgb(90, 26, 0); font-size: 17px;">Comunidade</a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#login" style="color:rgb(90, 26, 0); font-size: 17px;">Login</a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#cadastro" style="color:rgb(90, 26, 0); font-size: 17px;">Cadastro</a>
+
+            
+            <form id="proc" class="d-flex" role="search" style="margin-left: 10px;">
+
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border: 3px solid rgb(90, 26, 0);">
+                <button class="btn btn-outline-success" type="submit" style="color:rgb(255, 255, 255);">Search</button>
+                
+            </form>
+    
+        </nav>
+    
+        <div class="container text-center">
+            
+            <section id="home" class="section tab-pane fade show active">
+
+                        <h1 class="titulos" style="font-size: 130px; ">Chef Gold</h1>
+
+                        <h2 style="color:  rgb(255, 255, 255); font-weight: bold; margin-top: 50px; font-size: 40px;">O site numero um em gastronomia</h2>
+
+                        <div class="container text-center" style="display: flex; flex-direction: row;">
+                            <div class="card" style="width: 18rem; margin-right: 30px; ">
+                                <img src="Imagens/chefhome.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Técnico em Gastronomia</h5>
+                                <p class="card-text">Fique por dentro do curso estácio, tecnico em gastronomia, para se aperfeiçoar cada vez mais como um grande chefe de cozinha!</p>
+                                <a href="https://estacio.br/cursos-tecnicos/tecnico-em-gastronomia" class="btn btn-primary">Saiba mais</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="width: 18rem; margin-right: 30px;">
+                                <img src="Imagens/chefhome2.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Mundo Vegano</h5>
+                                <p class="card-text">As melhores receitas veganas, não fique mais refém dos mesmos sabores, aqui te daremos varias receitas deliciosas do mundo vegano</p>
+                                <a href="https://www.receiteria.com.br/receitas-veganas/" class="btn btn-primary">Saiba mais</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="width: 18rem;">
+                                <img src="Imagens/chefhome3.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Rede de chefes</h5>
+                                <p class="card-text">Entre agora na nossa rede de chefes, nesse grupo você encontra chefes de cozinha experiêntes com quem você pode aprender sempre mais!</p>
+                                <a href="https://www.facebook.com/groups/cozinheirosprofissionaiseamadores/?locale=pt_BR" class="btn btn-primary">Saiba mais</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="container text-center" style=" margin-top: -50px;">
+                            <div class="card mb-3" style="text-align: center;">
+
+                                <img src="Imagens/banner.png" class="card-img-top" alt="...">
+                                <div class="card-body" class="container text-center">
+                                    <h5 class="card-title">Campanha Mundo Verde</h5>
+                                    <p class="card-text">Aprenda tudo sobre todos os tipos de comida, aqui temos espaço para todas as preferências.
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/M3pN4TAN2no?si=OMIL3KvWsY6FKnyM" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                </section>
+
+                <section id="receitas"  class="section tab-pane fade">
+
+                        <div style="margin-top: 0px;">
+                        
+                                <div style="display: flex; flex-direction: row;">
+
+
+
+
+                                    <div class="card" style="width: 44rem; ">
+                                        <img src="Imagens/Receita1.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Feijão tropeiro</h5>
+                                        <p class="card-text">O feijão com a marca registrada da culinária baiana.</p> 
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">150 g de bacon picadinho</li>
+                                            <li class="list-group-item">250 g de linguiça calabresa picadinha</li>
+                                            <li class="list-group-item">2 cebolas picadinhas</li>
+                                            <li class="list-group-item">6 dentes de alho amassados</li>
+                                            <li class="list-group-item">1 xícara (café) de azeite</li>
+                                            <li class="list-group-item">500 g de feijão cozido e escorrido</li>
+                                            <li class="list-group-item">1 cubo de caldo de bacon</li>
+                                            <li class="list-group-item">4 ovos fritos inteiros e picadinhos</li>
+                                            <li class="list-group-item">1 cubo de caldo de bacon</li>
+                                            <li class="list-group-item">cheiro-verde a gosto</li>
+                                            <li class="list-group-item">1 cubo de caldo de bacon</li>
+                                            <li class="list-group-item">1 e 1/2 colher de farinha de mandioca crua</li>
+                                            <li class="list-group-item">sal a gosto</li>
+                                            <li class="list-group-item">pimenta a gosto</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a href="https://www.tudogostoso.com.br/receita/71014-feijao-tropeiro.html"> <button class="btn btn-primary">Receita completa</button> </a>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita2.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Moqueca de Camarão</h5>
+                                        <p class="card-text">Um gosto forte e delicioso, experimente essa bomba de sabores</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">1/2 kg de camarão médio</li>
+                                            <li class="list-group-item">1/2 xícara de café de azeite de dendê</li>
+                                            <li class="list-group-item">1/2 xícara de chá de coentro</li>
+                                            <li class="list-group-item">2 cebolinhas verdes cortadas</li>
+                                            <li class="list-group-item">1/2 xícara de chá de salsinha picada</li>
+                                            <li class="list-group-item">3 tomates cortados em rodelas</li>
+                                            <li class="list-group-item">1 vidro de leite de coco</li>
+                                        </ul>
+
+                                        <div class="card-body">
+                                            <a href="https://www.tudogostoso.com.br/receita/9400-moqueca-de-camarao.html"> <button class="btn btn-primary">Receita completa</button> </a>
+                                        </div>
+
+                                    </div>
+
+                        </div>
+
+                        <div style="display: flex; flex-direction: row;">
+
+
+                                        <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita3.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Isca de peixe empanado</h5>
+                                        <p class="card-text">Ideal para petiscar com amigos e também como uma deliciosa entrada para o cardápio de Páscoa.</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">5 filés de tilápia (500 g)</li>
+                                            <li class="list-group-item">1 colher de chá de sal</li>
+                                            <li class="list-group-item">1 dente de alho amassado</li>
+                                            <li class="list-group-item">suco de 1 limão</li>
+                                            <li class="list-group-item">1 xícara de chá de farinha de trigo</li>
+                                            <li class="list-group-item">2 ovos batidos levemente</li>
+                                            <li class="list-group-item">1 xícara de chá de farinha de rosca</li>
+                                            <li class="list-group-item">1/2 xícara de chá de Molho Hellmann's 3 em 1</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a href="https://www.tudogostoso.com.br/receita/180571-isca-de-peixe-empanada.html"> <button class="btn btn-primary"> Receita completa </button></a>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita4.jpeg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Carne do sol com mandioca</h5>
+                                        <p class="card-text">Um prato típico do Nordeste que o Brasil inteiro ama. Essa receita de Carne de sol com macaxeira é perfeita tanto para ser seu prato principal quanto para ser um petisco para comer tomando uma cerveja. E o melhor de tudo: você faz em apenas meia hora a panela de pressão! O toque especial de sabor fica por conta do Tempero Knorr Carne. Aprenda o passo a passo aqui, é muito fácil, você vai se surpreender!</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">500 g carne de sol</li>
+                                            <li class="list-group-item">3 dentes alho, cortado em lâminas</li>
+                                            <li class="list-group-item">(PARA MANDIOCA:)</li>
+                                            <li class="list-group-item">300 ml óleo</li>
+                                            <li class="list-group-item">300 g mandioca</li>
+                                            <li class="list-group-item">Sal a gosto</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a href="https://www.tudogostoso.com.br/receita/12964-carne-de-sol-com-mandioca.html"> <button class="btn btn-primary"> Receita completa </button> </a>
+                                        </div>
+                                    </div>
+                                
+                        </div>
+
+                        
+
+
+                        <div style="display: flex; flex-direction: row;">
+
+
+                                    <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita5.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Camarão alho e óleo</h5>
+                                        <p class="card-text">Um petisco muito apreciado em todo o país, o camarão ao alho e óleo é muito fácil de preparar na sua própria casa!</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">1 kg e 200 g camarão médio</li>
+                                            <li class="list-group-item">10 dentes de alho</li>
+                                            <li class="list-group-item">1/2 xícara de óleo</li>
+                                            <li class="list-group-item">Sal a gosto</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a href="https://www.tudogostoso.com.br/receita/15286-camarao-ao-alho-e-oleo.html"> <button class="btn btn-primary"> Receita Completa </button> </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita6.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Hamburguer artesanal</h5>
+                                        <p class="card-text">Nada melhor para receber os amigos no fim de semana do que um delicioso hambúrguer artesanal, com aquele toquezinho caseiro especial!</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">1 kg de carne moída (de preferência patinho)</li>
+                                            <li class="list-group-item">1 cebola media picada</li>
+                                            <li class="list-group-item">cebolinha a gosto</li>
+                                            <li class="list-group-item">orégano a gosto</li>
+                                            <li class="list-group-item">orégano a gosto</li>
+                                            <li class="list-group-item">1 sachê de creme de cebola</li>
+                                            <li class="list-group-item">4 dentes de alho picado</li>
+                                            <li class="list-group-item">sal a gosto</li>
+                                            <li class="list-group-item">pimenta a gosto</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a href="https://www.tudogostoso.com.br/receita/187825-hamburguer-caseiro.html"> <button class="btn btn-primary"> Receita completa </button> </a>
+                                        </div>
+                                    </div>
+
+                        </div>
+
+                        <div style="display: flex; flex-direction: row;">
+
+
+                                    <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita7.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Pirão de peixe</h5>
+                                        <p class="card-text">Faça agora mesmo em sua casa essa receita de pirão de peixe simples e fácil! Esse prato típico de nosso país é ideal para uma reunião especial em família!</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">300 g peixe (pintado/tambaqui) ou cabeças que sobram</li>
+                                            <li class="list-group-item">2 tomates maduros picados</li>
+                                            <li class="list-group-item">1/2 pimentao picado</li>
+                                            <li class="list-group-item">2 colheres de sopa de colorau</li>
+                                            <li class="list-group-item">1 pimenta malagueta picada (opcional)</li>
+                                            <li class="list-group-item">Sal a gosto</li>
+                                            <li class="list-group-item">2 litros de água</li>
+                                            <li class="list-group-item">250 g farinha de mandioca</li>
+                                            <li class="list-group-item">2 cebolas picadas</li>
+                                            <li class="list-group-item">3 tabletes de caldo de camarão</li>
+                                            <li class="list-group-item">1 pimenta de cheiro picada</li>
+                                            <li class="list-group-item">Pimenta-do-reino a gosto</li>
+                                            <li class="list-group-item">6 colheres de sopa de azeite de dende (ou azeite de oliva)</li>
+                                            <li class="list-group-item">Cheiro verde</li>
+                                        </ul>
+                                        <div class="card-body">
+                                        <a href="https://www.tudogostoso.com.br/receita/89591-pirao-de-peixe.html"> <button class="btn btn-primary"> Receita completa </button> </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style="width: 44rem;">
+                                        <img src="Imagens/Receita8.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Maminha de forno</h5>
+                                        <p class="card-text">Uma carne macia e suculenta, com um sabor inesquecível</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">1 kg e 1/2 de maminha</li>
+                                            <li class="list-group-item">3 colheres (sopa) de manteiga</li>
+                                            <li class="list-group-item">3 tabletes de caldo de carne (sem dissolver)</li>
+                                            <li class="list-group-item">1 colher (sopa) de farinha de trigo</li>
+                                            <li class="list-group-item">salsinha picada</li>
+                                            <li class="list-group-item">1 xícara (chá) de água</li>
+                                            <li class="list-group-item">mini cebolas(a gosto)</li>
+                                        </ul>
+                                        <div class="card-body">
+                                        <a href="https://www.tudogostoso.com.br/receita/13179-maminha-ao-forno-deliciosa.html"> <button class="btn btn-primary">Receita completa </button> </a>
+                                        </div>
+                                    </div>
+                                
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </section>
+
+                <section id="login" class="section tab-pane fade">
+
+            
+                            <div class="wrap-login100">
+                                <div class="login100-pic js-tilt" data-tilt>
+                                    <img src="images/img-01.png" alt="IMG">
+                                </div>
+
+                                <form class="login100-form validate-form">
+                                    <span class="login100-form-title">
+                                        Fazer login
+                                    </span>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                        <input class="input100" type="email" name="email" placeholder="Email" required>
+                                        <span class="focus-input100"></span>
+                                        <span class="symbol-input100">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                                        <input class="input100" type="password" name="pass" placeholder="Password" required>
+                                        <span class="focus-input100"></span>
+                                        <span class="symbol-input100">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="container-login100-form-btn">
+                                        <button href='home.html' class="login100-form-btn">
+                                            Login
+                                        </button>
+                                    </div>
+
+                                    <div class="text-center p-t-136">
+                                        <a class="txt2" href="#cadastro">
+                                            Criar uma conta
+                                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+
+                                </form>
+                            </div>
+                
+                </section>
+
+                <section id="cadastro" class="section tab-pane fade">
+
+                        <div class="wrap-login100">
+                                <div class="login100-pic js-tilt" data-tilt>
+                                    <img src="images/img-01.png" alt="IMG">
+                                </div>
+
+                                <form class="login100-form validate-form">
+                                    <span class="login100-form-title">
+                                        Cadastro de Usuário
+                                    </span>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                        <input class="input100" type="email" name="email" placeholder="Email" required>
+                                        <span class="focus-input100"></span>
+                                        <span class="symbol-input100">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                                        <input class="input100" type="password" name="pass" placeholder="Password" required>
+                                        <span class="focus-input100"></span>
+                                        <span class="symbol-input100">
+                                            <i class="fa fa-lock" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "data necessária">
+                                        <input class="input100" type="date" name="datanas" placeholder="Data de nascimento:" required>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Informe o Cpf">
+                                        <input class="input100" type="cpf" name="cpfcad" placeholder="CPF" required>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Crie um nome de usuário">
+                                        <input class="input100" type="text" name="usu" placeholder="Nome de Usuário" required>
+                                    </div>
+                                    
+                                    <div class="container-login100-form-btn">
+                                        <button href='home.html' class="login100-form-btn">
+                                            Cadastrar
+                                        </button>
+                                    </div>
+
+                                    <div class="text-center p-t-136">
+                                        <a class="txt2" href="#cadastro">
+                                            Fazer Login
+                                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+
+                                </form>
+                    </div>
+
+                </section>
+
+                <section id="comunidade" class="section tab-pane fade">
+
+                        <h1 class="titulos"; style="font-size: 87px;">Comunidade</h1>
+
+                        <div style="background-color: #222; padding: 20px; text-align: left;">
+
+                            <div class="card text-bg-primary mb-3" style="max-width: 100rem; padding: 50px;">
+
+                                <div class="card-header" style="display: flex; flex-direction: row; font-size: 40px; background-color: #222;"> 
+                                    Feed de Notícias
+                                </div>
+
+                                <div class="card-body" style="background-color: #222; display: flex; flex-direction: column;">
+
+                                    <div class="d-flex position-relative" style="background-color: aliceblue; margin-bottom: 50px;">
+                                        <img src="Imagens/com.png" class="flex-shrink-0 me-3" height="100px" width="100px">
+                                        <div>
+                                            <h4 class="mt-0" style="color: black; font-weight: bold; margin-bottom:5px;">Roberto silva</h4>
+                                            <p style="color: black;">Hoje aprendi bastante na plataforma, o dia foi bem corrido no restaurante, mas deu pra tirar um tempo legal de estudo!</p>
+                                            <br>
+                                            <p style="color: red;">Há 8 min atrás</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <button id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color: #13c92b65; margin-right: 10px; size:50px;"></i></button>
+                                            <button id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" style="color: #ff00006d;"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex position-relative" style="background-color: aliceblue; margin-bottom: 50px;">
+                                        <img src="Imagens/2com.png" class="flex-shrink-0 me-3" height="100px" width="100px">
+                                        <div>
+                                            <h5 class="mt-0" style="color: black; font-weight: bold; margin-bottom:5px;">Adriano JR</h5>
+                                            <p style="color: black;">Muita correria hoje, mas ja postei minhas receitas pra a galera curtir um churras nesse fim de semana kkkkkk</p>
+                                            <br>
+                                            <p style="color: red;">Há 7 min atrás</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <button id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color: #13c92b65; margin-right: 10px; size:50px;"></i></button>
+                                            <button id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" style="color: #ff00006d;"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex position-relative" style="background-color: aliceblue; margin-bottom: 50px;">
+                                        <img src="Imagens/6com.png" class="flex-shrink-0 me-3" height="100px" width="100px">
+                                        <div>
+                                            <h5 class="mt-0" style="color: black; font-weight: bold; margin-bottom:5px;">Rafaela parreiro</h5>
+                                            <p style="color: black;">Cara como eu amo aquelas coxinhas na farinha de rosca com varios sabores diferentes, comi na Bahia, alguem posta a receita por favorrr!!!</p>
+                                            <br>
+                                            <p style="color: red;">Há 5 min atrás</p>
+
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <button id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color: #13c92b65; margin-right: 10px; size:50px;"></i></button>
+                                            <button id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" style="color: #ff00006d;"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex position-relative" style="background-color: aliceblue; margin-bottom: 50px;">
+                                        <img src="Imagens/7com.png" class="flex-shrink-0 me-3" height="100px" width="100px">
+                                        <div>
+                                            <h5 class="mt-0" style="color: black; font-weight: bold; margin-bottom:5px;">Adriele Barreto</h5>
+                                            <p style="color: black;">Eu acho engraçado como tem gente que acha que comida vegetariana é ruim, porque ainda não viu minhas receitas da semana, corre lá!!!!</p>
+                                            <br>
+                                            <p style="color: red;">Há 3 min atrás</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <button id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color: #13c92b65; margin-right: 10px; size:50px;"></i></button>
+                                            <button id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" style="color: #ff00006d;"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex position-relative" style="background-color: aliceblue; margin-bottom: 50px;">
+                                        <img src="Imagens/8com.png" class="flex-shrink-0 me-3" height="100px" width="100px">
+                                        <div>
+                                            <h5 class="mt-0" style="color: black; font-weight: bold; margin-bottom:5px;">Angelina Santos</h5>
+                                            <p style="color: black;">Não é querendo criticar ninguem, mas tem muita gente aqui no site que fica escondendo receitas deliciosas e não abre por nada kkkkkkkkk, @NataliaCruz que o diga em.</p>
+                                            <br>
+                                            <p style="color: red;">Há 1 min atrás</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <button id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color: #13c92b65; margin-right: 10px; size:50px;"></i></button>
+                                            <button id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" style="color: #ff00006d;"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex position-relative" style="background-color: aliceblue; margin-bottom: 50px;">
+                                        <img src="Imagens/4com.png" class="flex-shrink-0 me-3" height="100px" width="100px">
+                                        <div>
+                                            <h5 class="mt-0" style="color: black; font-weight: bold; margin-bottom:5px;">Andreas Marovi</h5>
+                                            <p style="color: black;">Galera, to muito feliz, ontem abri meu restaurante depois de anos de muita luta, espero evoluir sempre, o mundo é sem limite pra quem sonha alto.</p>
+                                            <br>
+                                            <p style="color: red;">Há 4 seg atrás</p>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <button id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color: #13c92b65; margin-right: 10px; size:50px;"></i></button>
+                                            <button id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true" style="color: #ff00006d;"></i></button>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+
+                                <div class="form-floating">
+
+                                    <form style="margin-top:50px;">
+
+                                      <textarea class="form-control" placeholder="Comente aqui" id="floatingTextarea2" style="height: 100px"></textarea>
+                                      <button class="btn btn-primary" style="padding-left: 416px; padding-right: 398px;">Postar</button>
+
+                                    </form>
+                                </div>
+
+                            </div>
+
+                </section>
+        </div>
+
+        <footer>
+            <h3 style="margin-left:-50px;">@Chefegold</h3>
+
+            <table style=" margin-top: 20px;  margin-left: 770px;">
+
+                <tr>
+                    <td>Desenvolvedor - David Lins</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://getbootstrap.com">https://getbootstrap.com</a></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://www.tudogostoso.com.br">https://www.tudogostoso.com.br</a></td>
+                </tr>
+
+
+            </table>
+        </footer>
+
+        <!-- Link para o JavaScript do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        
+        
+    </body>
+
+</html>
